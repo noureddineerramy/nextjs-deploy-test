@@ -1,0 +1,11 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY nextjs-app.tar .
+
+RUN tar -xf nextjs-app.tar
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

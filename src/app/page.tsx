@@ -5,6 +5,8 @@ import ServerComponent from "./ServerComponent";
 import ClientComponent from "./ClientComponent";
 import { getServerActionResult } from "./serverAction";
 import { useEffect, useState } from "react";
+import EnvVarsDisplay from "./EnvVarsDisplay";
+import MySQLStatus from './MySQLStatus';
 
 export default function Home() {
   const [routeHandlerResult, setRouteHandlerResult] = useState("");
@@ -25,6 +27,12 @@ export default function Home() {
         <div>Result from server action: {serverActionResult}</div>
         <ClientComponent />
         <div>Result from route handler: {routeHandlerResult}</div>
+        <div id="environnement-vars">
+          <EnvVarsDisplay />
+        </div>
+        <div id="mysql-message">
+          <MySQLStatus />
+        </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
